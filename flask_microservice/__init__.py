@@ -1,0 +1,1 @@
+from flask_microservice.microservice import create_app
