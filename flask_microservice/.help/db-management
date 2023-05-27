@@ -1,0 +1,19 @@
+1. Create Database and User:
+#   >> sudo -u postgres psql
+#        >> CREATE USER YOUR_USERNAME WITH ENCRYPTED PASSWORD 'YOU_PASSWORD';
+#        >> ALTER USER YOUR_USERNAME CREATEDB CREATEROLE LOGIN;
+#        >> Create DATABASE YOUR_DATABASE_NAME;
+#        >> grant all privileges on database YOUR_DATABASE_NAME to YOUR_USERNAME;
+#
+2. Remove Database:
+#   >> sudo -u postgres psql
+#        >> REVOKE CONNECT ON DATABASE YOUR_DATABASE_NAME FROM public;
+#        >> SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'YOUR_DATABASE_NAME';
+#        >> DROP DATABASE YOUR_DATABASE_NAME;
+#
+3. Instail DB with migrations
+#   >> flask db init
+#   >> flask db migrate
+#   >> flask db upgrade
+
+
