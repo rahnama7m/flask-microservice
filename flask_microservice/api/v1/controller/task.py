@@ -5,6 +5,7 @@
 
 # Import project packages and modules
 from flask_microservice.utils import json_response_parser
+from flask_microservice.models.tasks import Task
 
 
 class TaskController:
