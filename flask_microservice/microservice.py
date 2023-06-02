@@ -9,9 +9,8 @@ from flask_migrate import Migrate
 # Import project packages and modules
 from .settings import config
 from .api.v1 import resource as api_v1_resource
-
-db = SQLAlchemy()
-mg = Migrate()
+from .models.base import db
+from .models.base import mg
 
 
 def create_app():
