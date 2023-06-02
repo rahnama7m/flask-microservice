@@ -11,6 +11,7 @@ from .settings import config
 from .api.v1 import resource as api_v1_resource
 from .models.base import db
 from .models.base import mg
+from .api.v1 import schema as api_v1_schema
 
 
 def create_app():
@@ -18,5 +19,6 @@ def create_app():
     app.config.from_object(config.Config)
     db.init_app(app)
     mg.init_app(app, db)
+    api_v1_schema.ma.init_app(app)
     app.register_blueprint(api_v1_resource.api_v1_blp)
     return app

@@ -1,0 +1,2 @@
+1. Install packages:
+    pip install flask-marshmallow flask-sqlalchemy marshmallow-sqlalchemy
